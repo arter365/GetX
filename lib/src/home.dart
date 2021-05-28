@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sample_route_manage/src/pages/normal/first.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -23,7 +25,7 @@ class Home extends StatelessWidget {
                     return s * 2;
                   }
              */
-            ElevatedButton(onPressed: () {}, child: Text("일반적인 라우트")),
+            ElevatedButton(onPressed: () {Get.to(FirstPage());}, child: Text("일반적인 라우트")),
           ],
         ),
       ),

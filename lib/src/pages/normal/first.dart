@@ -8,7 +8,7 @@ class FirstPage extends StatelessWidget {
   상태를 기억해야 할 때 Key는 유용하게 사용될 수 있다.
    */
   // 상수생성자이며 Key - value 형식으로 만들었다.
-  const FirstPage({required Key key}) : super(key: key);  // required는 생성자가 기본값이 없고 null이 아닐 경우 사용한다.
+  //const FirstPage({required Key key}) : super(key: key);  // required는 생성자가 기본값이 없고 null이 아닐 경우 사용한다.
 
   @override
   Widget build(BuildContext context) {
