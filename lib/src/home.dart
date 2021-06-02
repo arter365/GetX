@@ -25,7 +25,16 @@ class Home extends StatelessWidget {
                     return s * 2;
                   }
              */
-            ElevatedButton(onPressed: () {Get.to(FirstPage());}, child: Text("일반적인 라우트")),
+            ElevatedButton(
+                onPressed: () {
+                  // GetX가 없을 때 이동하는 방식
+                  // Navigator.of(context)
+                  //     .push(MaterialPageRoute(builder: (_) => FirstPage()));
+
+                  // GetX로 이동하는 방식
+                  Get.to(FirstPage());
+                },
+                child: Text("일반적인 라우트")),
           ],
         ),
       ),
