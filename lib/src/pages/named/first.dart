@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:sample_route_manage/src/pages/normal/second.dart';
 
 class FirstNamedPage extends StatelessWidget {
   /*
@@ -25,7 +23,7 @@ class FirstNamedPage extends StatelessWidget {
           children: [
             ElevatedButton(
                 onPressed: () {
-                  Get.to(SecondPage());
+
                 },
                 child: Text("다음페이지 이동")),
           ],
