@@ -4,6 +4,7 @@ import 'package:sample_route_manage/src/home.dart';
 import 'package:sample_route_manage/src/pages/named/first.dart';
 import 'package:sample_route_manage/src/pages/named/second.dart';
 import 'package:sample_route_manage/src/pages/next.dart';
+import 'package:sample_route_manage/src/pages/userpage.dart';
 
 void main() {
   runApp(MyApp());
@@ -39,6 +40,8 @@ class MyApp extends StatelessWidget {
           GetPage(name: "/first", page: () => FirstNamedPage(), transition: Transition.zoom),
           GetPage(name: "/second", page: () => SecondNamedPage(), transition: Transition.zoom),
           GetPage(name: "/next", page: () => NextPage(), transition: Transition.zoom),
+          // 웹페이지를 만들때 동적 url을 사용하여 id를 전달하는 방식으로 아래와 같이 만든다.
+          GetPage(name: "/user/:uid", page: () => UserPage(), transition: Transition.zoom),
         ]);
   }
 }

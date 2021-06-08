@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sample_route_manage/src/pages/user.dart';
 import 'package:sample_route_manage/src/pages/normal/first.dart';
 
 class Home extends StatelessWidget {
@@ -46,15 +47,26 @@ class Home extends StatelessWidget {
                 child: Text("Named 라우트")),
             ElevatedButton(
                 onPressed: () {
-                  // GetX가 없을 때 이동하는 방식
-                  // Navigator.of(context).pushNamed("/first");
-
-                  // GetX로 이동하는 방식
+                  // ---- GetX로 이동하면서 arguments전달 ----
                   // Get.toNamed("/next", arguments: 22);          // 숫자도 전달.
                   // Get.toNamed("/next", arguments: "twotone");  // 문자를 전달.
-                  Get.toNamed("/next", arguments: {"name": "twotone", "age": "22"});
+                  // Get.toNamed("/next", arguments: {"name": "twotone", "age": "22"}); // 키벨류 전달
+                  // ---- 객체를 전달 ----
+                  // 1단계 -----------------------------------
+                  // User user = new User("홍길동", 27);
+                  // Get.toNamed("/next", arguments: user);
+                  // 2단계 -----------------------------------
+                  // Get.toNamed("/next", arguments: new User("홍길동", 27));
+                  // 3단계 -----------------------------------
+                  Get.toNamed("/next", arguments: User("홍길동", 27));
                 },
                 child: Text("Arguments 전달")),
+            ElevatedButton(
+                onPressed: () {
+                  // 웹페이지를 만들때 동적 url을 사용하여 id를 전달하는 방식으로 아래와 같이 만든다.
+                  Get.toNamed("/user/28357?name=둘리&age=22");
+                },
+                child: Text("동적 url")),
           ],
         ),
       ),
