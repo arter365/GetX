@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:sample_route_manage/src/home.dart';
 import 'package:sample_route_manage/src/pages/named/first.dart';
 import 'package:sample_route_manage/src/pages/named/second.dart';
+import 'package:sample_route_manage/src/pages/next.dart';
 
 void main() {
   runApp(MyApp());
@@ -34,9 +35,10 @@ class MyApp extends StatelessWidget {
 
         // GetX를 사용한 Route방식
         getPages: [
-          GetPage(name: "/", page: () => Home()),
-          GetPage(name: "/first", page: () => FirstNamedPage()),
-          GetPage(name: "/second", page: () => SecondNamedPage()),
+          GetPage(name: "/", page: () => Home(), transition: Transition.zoom),
+          GetPage(name: "/first", page: () => FirstNamedPage(), transition: Transition.zoom),
+          GetPage(name: "/second", page: () => SecondNamedPage(), transition: Transition.zoom),
+          GetPage(name: "/next", page: () => NextPage(), transition: Transition.zoom),
         ]);
   }
 }

@@ -35,6 +35,26 @@ class Home extends StatelessWidget {
                   Get.to(FirstPage());
                 },
                 child: Text("일반적인 라우트")),
+            ElevatedButton(
+                onPressed: () {
+                  // GetX가 없을 때 이동하는 방식
+                  // Navigator.of(context).pushNamed("/first");
+
+                  // GetX로 이동하는 방식
+                  Get.toNamed("/first");
+                },
+                child: Text("Named 라우트")),
+            ElevatedButton(
+                onPressed: () {
+                  // GetX가 없을 때 이동하는 방식
+                  // Navigator.of(context).pushNamed("/first");
+
+                  // GetX로 이동하는 방식
+                  // Get.toNamed("/next", arguments: 22);          // 숫자도 전달.
+                  // Get.toNamed("/next", arguments: "twotone");  // 문자를 전달.
+                  Get.toNamed("/next", arguments: {"name": "twotone", "age": "22"});
+                },
+                child: Text("Arguments 전달")),
           ],
         ),
       ),

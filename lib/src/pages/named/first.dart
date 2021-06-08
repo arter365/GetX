@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class FirstNamedPage extends StatelessWidget {
   /*
@@ -23,9 +24,10 @@ class FirstNamedPage extends StatelessWidget {
           children: [
             ElevatedButton(
                 onPressed: () {
-
+                  // offNamed는 현재 페이지를 지우고 페이지를 이동하기 때문에 뒤로를 누르면 홈으로 이동한다.
+                  Get.offNamed("/second");
                 },
-                child: Text("다음페이지 이동")),
+                child: Text("Named 이 페이지 지우고 다음페이지 이동")),
           ],
         ),
       ),
