@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sample_route_manage/src/pages/simple_state_manage_page.dart';
 import 'package:sample_route_manage/src/pages/user.dart';
 import 'package:sample_route_manage/src/pages/normal/first.dart';
 
@@ -67,6 +68,12 @@ class Home extends StatelessWidget {
                   Get.toNamed("/user/28357?name=둘리&age=22");
                 },
                 child: Text("동적 url")),
+            ElevatedButton(
+                onPressed: () {
+                  // 단순상태 관리는 기존의 Provider와 비슷하다.
+                  Get.to(SimpleStateManagePage());
+                },
+                child: Text("단순상태관리")),
           ],
         ),
       ),
