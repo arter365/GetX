@@ -49,7 +49,7 @@ class Home extends StatelessWidget {
                 onPressed: () {
                   // ---- GetX로 이동하면서 arguments전달 ----
                   // Get.toNamed("/next", arguments: 22);          // 숫자도 전달.
-                  // Get.toNamed("/next", arguments: "twotone");  // 문자를 전달.
+                  // Get.toNamed("/next", arguments: "twotone");   // 문자를 전달.
                   // Get.toNamed("/next", arguments: {"name": "twotone", "age": "22"}); // 키벨류 전달
                   // ---- 객체를 전달 ----
                   // 1단계 -----------------------------------
