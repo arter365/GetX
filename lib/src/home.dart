@@ -72,6 +72,11 @@ class Home extends StatelessWidget {
                   Get.toNamed("/reactivestate");
                 },
                 child: Text("반응형 상태관리")),
+            ElevatedButton(
+                onPressed: () {
+                  Get.toNamed("/dependencymanage");
+                },
+                child: Text("의존성 관리")),
           ],
         ),
       ),
