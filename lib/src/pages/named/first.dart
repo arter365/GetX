@@ -7,6 +7,7 @@ class FirstNamedPage extends StatelessWidget {
   위젯이 위젯트리에서 위치를 변경하더라도 Key는 상태정보를 유지한다. 따라서 리스트의 컬렉션이 수정될 때 스크롤 위치를 기억하거나,
   상태를 기억해야 할 때 Key는 유용하게 사용될 수 있다.
    */
+
   // 상수생성자이며 Key - value 형식으로 만들었다.
   // const FirstPage({required Key key}) : super(key: key);
   const FirstNamedPage({Key? key})
