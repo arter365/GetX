@@ -15,6 +15,7 @@ class BindingPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // builder: (_) 에 마우스를 올려보면 BindingPutController를 담아서 보내주는 것을 얼 수 있다.
             GetBuilder<BindingPutController>(builder: (_) {
               return Text(
                 _.count.toString(),
@@ -27,7 +28,7 @@ class BindingPage extends StatelessWidget {
                 // Get.find<BindingPutController>().increase();
                 BindingPutController.to.increase(); // 이렇게 쉽게 사용 할 수 있다.
               },
-              child: Text("BindingPage"),
+              child: Text("BindingPage++"),
             ),
           ],
         ),

@@ -8,6 +8,6 @@ class BindingPutController extends GetxController{
 
   void increase(){
     count++;
-    update(); // Rx 반응형이 아니면 update()를 적어준다.
+    update(); // Rx 반응형이 아니면 update()를 적어줘야 화면이 갱신된다.
   }
 }
