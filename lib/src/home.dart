@@ -77,7 +77,6 @@ class Home extends StatelessWidget {
                   Get.toNamed("/dependencymanage");
                 },
                 child: Text("의존성 관리")),
-
             ElevatedButton(
                 onPressed: () {
                   Get.toNamed("/binding");
@@ -88,6 +87,11 @@ class Home extends StatelessWidget {
                   Get.toNamed("/bindingseparation");
                 },
                 child: Text("바인딩 분리 테스트")),
+            ElevatedButton(
+                onPressed: () {
+                  Get.toNamed("/setvicetest");
+                },
+                child: Text("Service 테스트")),
           ],
         ),
       ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sample_route_manage/src/binding/binding_page.dart';
 import 'package:sample_route_manage/src/controller/binding_put_controller.dart';
+import 'package:sample_route_manage/src/controller/service_controller.dart';
 import 'package:sample_route_manage/src/home.dart';
 import 'package:sample_route_manage/src/pages/bindingpage/binding.dart';
 import 'package:sample_route_manage/src/pages/bindingpage/bindingseparation.dart';
@@ -10,6 +11,7 @@ import 'package:sample_route_manage/src/pages/named/first.dart';
 import 'package:sample_route_manage/src/pages/named/second.dart';
 import 'package:sample_route_manage/src/pages/next.dart';
 import 'package:sample_route_manage/src/pages/reactive_state_page.dart';
+import 'package:sample_route_manage/src/pages/service_page.dart';
 import 'package:sample_route_manage/src/pages/userpage.dart';
 
 void main() {
@@ -68,7 +70,6 @@ class MyApp extends StatelessWidget {
               name: "/dependencymanage",
               page: () => DependencyManagePage(),
               transition: Transition.zoom),
-
           // 바인딩 처리 방법 1 : dependency_manage_page.dart에서 사용했던 페이지 이동 시 Binding 처리
           // 바인딩 처리 방법 2 : 아래와 같이 Routing 시 Binding 처리
           GetPage(
@@ -76,7 +77,7 @@ class MyApp extends StatelessWidget {
               page: () => BindingPage(),
               transition: Transition.zoom,
               binding: BindingsBuilder(() {
-                Get.put(BindingPutController());
+                Get.put(BindingPutController(), permanent: true);
               })),
           // 바인딩 처리방법 3 : Routing 시 Binding 처리는 동알하지만 Binding 페이지를 분리하여 사용한 예제.
           GetPage(
@@ -84,6 +85,15 @@ class MyApp extends StatelessWidget {
               page: () => BindingSeparationPage(),
               transition: Transition.zoom,
               binding: BindingPageImpl()),
+          // Controller 상태 유지 방법 1 : Get.put(BindingPutController(), permanent: true); // 이와 같이 permanent 속성을 true로 준다.
+          // Controller 상태 유지 방법 2 : 위와 동일한 결과를 얻을 수 있는 방법으로 GetxController 대신 GetxService를 상속받는다.
+          GetPage(
+              name: "/setvicetest",
+              page: () => ServicePage(),
+              transition: Transition.zoom,
+              binding: BindingsBuilder(() {
+                Get.put(ServiceController());
+              })),
         ]);
   }
 }
