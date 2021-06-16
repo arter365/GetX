@@ -33,7 +33,7 @@ class Home extends StatelessWidget {
                   //     .push(MaterialPageRoute(builder: (_) => FirstPage()));
 
                   // GetX로 이동하는 방식
-                  Get.to(FirstPage());
+                  Get.to(() => FirstPage());
                 },
                 child: Text("일반적인 라우트")),
             ElevatedButton(
@@ -77,6 +77,17 @@ class Home extends StatelessWidget {
                   Get.toNamed("/dependencymanage");
                 },
                 child: Text("의존성 관리")),
+
+            ElevatedButton(
+                onPressed: () {
+                  Get.toNamed("/binding");
+                },
+                child: Text("바인딩 테스트")),
+            ElevatedButton(
+                onPressed: () {
+                  Get.toNamed("/bindingseparation");
+                },
+                child: Text("바인딩 분리 테스트")),
           ],
         ),
       ),

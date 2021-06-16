@@ -19,7 +19,7 @@ class FirstPage extends StatelessWidget {
           children: [
             ElevatedButton(
                 onPressed: () {
-                  Get.to(SecondPage());
+                  Get.to(() => SecondPage());
                 },
                 child: Text("다음페이지 이동")),
           ],

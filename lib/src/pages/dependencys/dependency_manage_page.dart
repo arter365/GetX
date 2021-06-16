@@ -24,8 +24,8 @@ class DependencyManagePage extends StatelessWidget {
           children: [
             ElevatedButton(
                 onPressed: () {
-                  Get.to( () =>
-                    GetPut(),
+                  Get.to(
+                    () => GetPut(),
                     // 페이지로 이동시 binding을 통해 필요한 의존성을 주입해 주고 나올 때 제거함. (싱글턴)
                     binding: BindingsBuilder(() {
                       Get.put(PutController());
@@ -36,12 +36,11 @@ class DependencyManagePage extends StatelessWidget {
                 child: Text("Get.put")),
             ElevatedButton(
                 onPressed: () {
-                  Get.to( () =>
-                    GetLazyPut(),
+                  Get.to(
+                    () => GetLazyPut(),
                     binding: BindingsBuilder(() {
                       // builder방식으로 구현해야 한다. lazyPut은 사용할 때 메모리에 올리고 나올 때 제거함. (싱글턴)
-                      Get.lazyPut<LazyPutController>(
-                          () => LazyPutController());
+                      Get.lazyPut<LazyPutController>(() => LazyPutController());
                     }),
                   );
                 },
@@ -49,8 +48,8 @@ class DependencyManagePage extends StatelessWidget {
             // 비동기 처리 후 put
             ElevatedButton(
                 onPressed: () {
-                  Get.to( () =>
-                    GetPutAsync(),
+                  Get.to(
+                    () => GetPutAsync(),
                     binding: BindingsBuilder(() {
                       // put과 같은 방식으로 동작하지만 비동기로 controller를 처리하고 페이지 이동을 한다. 나올 때 제거함. (싱글턴)
                       Get.putAsync<PutAsyncController>(() async {
@@ -64,12 +63,11 @@ class DependencyManagePage extends StatelessWidget {
                 child: Text("Get.putAsync")),
             ElevatedButton(
                 onPressed: () {
-                  Get.to( () =>
-                    GetCreate(),
+                  Get.to(
+                    () => GetCreate(),
                     binding: BindingsBuilder(() {
                       // put과 같은 방식으로 동작하지만 싱글턴이 아니다. 누를 때 마다 controller를 만들어 낸다.
-                      Get.create<CreateController>(
-                          () => CreateController());
+                      Get.create<CreateController>(() => CreateController());
                     }),
                   );
                 },
